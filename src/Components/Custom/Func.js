@@ -1,5 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
+import GeoDisplay from "./GeoDisplay";
+
 
 const Func = () => {
   const [location, setLocation] = useState({ latitude: 20, errorMessage: " " });
@@ -15,7 +16,7 @@ const Func = () => {
     }
   );
   if (location.latitude && !location.errorMessage) {
-      return <div>{ location.latitude }</div>
+      return <div><GeoDisplay latitude={location.latitude}/></div>
   }
   if (!location.latitude && location.errorMessage) {
     return <div>{ location.errorMessage }</div>
